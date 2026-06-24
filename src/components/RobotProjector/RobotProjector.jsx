@@ -111,7 +111,7 @@ function CanvasEyes({ isProjecting, onEmotionChange, isNavExpanded, overrideEmot
     const dpr = window.devicePixelRatio || 1;
 
     const width = isProjecting ? 200 : 120;
-    const height = isProjecting ? 100 : 300;
+    const height = isProjecting ? 100 : 120;
 
     cvs.width = width * dpr;
     cvs.height = height * dpr;
@@ -150,8 +150,8 @@ function CanvasEyes({ isProjecting, onEmotionChange, isNavExpanded, overrideEmot
       if (isProjecting || isNavExpanded) return;
       const rect = cvs.getBoundingClientRect();
       const rx = rect.left + rect.width / 2;
-      // Adjust ry center for bottom-aligned canvas
-      const ry = rect.top + rect.height - 40;
+      // Adjust ry center for centered canvas
+      const ry = rect.top + rect.height / 2;
       const dx = e.clientX - rx;
       const dy = e.clientY - ry;
 
@@ -242,7 +242,7 @@ function CanvasEyes({ isProjecting, onEmotionChange, isNavExpanded, overrideEmot
 
       const cx = width / 2;
       const breath = Math.sin(t * 2) * 2;
-      const cy = isProjecting ? height / 2 + breath : height - 40 + breath;
+      const cy = height / 2 + breath;
       const unit = isProjecting ? Math.min(width, height) : 80;
 
       const targetGap = unit * 0.4;
