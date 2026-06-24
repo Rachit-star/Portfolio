@@ -1,0 +1,199 @@
+.section {
+  width: 100%;
+  position: relative;
+  padding: 10vh 0 15vh 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.headerRow {
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sectionLabel {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectHoverRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.projectHoverRow:hover {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+
+.projectTitle {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color 0.4s ease;
+  letter-spacing: -0.02em;
+}
+
+.projectHoverRow:hover .projectTitle {
+  color: #050505;
+}
+
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.projectType {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #666;
+  transition: color 0.4s ease;
+}
+
+.projectHoverRow:hover .projectType {
+  color: #555;
+}
+
+.projectAction {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #fff;
+  transition: color 0.4s ease;
+}
+
+.projectHoverRow:hover .projectAction {
+  color: #050505;
+}
+
+/* Payload styles for the projector popup */
+.payloadBox {
+  font-family: 'Inter', sans-serif;
+  padding: 2rem 0;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.payloadTitle {
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.payloadStatus {
+  font-family: 'Courier New', Courier, monospace;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.payloadImage {
+  width: 100%;
+  height: 400px;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.payloadLink {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.payloadLink:hover {
+  background: #fff;
+  color: #050505;
+}
+
+.payloadDesc {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.payloadList {
+  font-family: 'Courier New', Courier, monospace;
+  color: #888;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.iframeWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #050505;
+}
+
+.scaledIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250%;
+  height: 250%;
+  border: none;
+  pointer-events: none;
+  transform: scale(0.4);
+  transform-origin: top left;
+}
+
+.iframeGradientOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: linear-gradient(to bottom, transparent 60%, #050505 100%);
+}
+
+.launchButtonContainer {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.noDataText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #333;
+}

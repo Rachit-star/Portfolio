@@ -1,0 +1,21 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+  backdrop-filter: blur(2px);
+}
+
+/* Hide cursor on mobile devices */
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}

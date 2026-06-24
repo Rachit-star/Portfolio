@@ -1,0 +1,130 @@
+.section {
+  width: 100%;
+  position: relative;
+  padding: 10vh 0 15vh 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.headerRow {
+  width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sectionLabel {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.experienceRow {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem 0;
+  gap: 4rem;
+}
+
+.expDate {
+  flex: 0 0 250px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #666;
+  padding-top: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.expContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expRole {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.expCompany {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.expDesc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #aaa;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+@media (max-width: 1024px) {
+  .experienceRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .expDate {
+    flex: none;
+    padding-bottom: 1rem;
+  }
+}
+
+.projectorBtn {
+  margin-top: 2rem;
+  background: transparent;
+  color: #888;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.projectorBtn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.photoContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.photoImage {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}

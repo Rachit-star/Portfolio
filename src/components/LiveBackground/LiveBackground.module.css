@@ -1,0 +1,90 @@
+.spotlightWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-color: #050505;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hiddenMural {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transform: rotate(-5deg) scale(1.2);
+  
+  /* The Magic Flashlight: Reveals the text only around the cursor */
+  mask-image: radial-gradient(
+    circle 400px at var(--mouse-x) var(--mouse-y),
+    black 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 400px at var(--mouse-x) var(--mouse-y),
+    black 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    transparent 100%
+  );
+  
+  /* Smooth transition so the flashlight glides */
+  transition: mask-position 0.1s ease-out, -webkit-mask-position 0.1s ease-out;
+}
+
+.muralRow {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(5rem, 10vw, 12rem);
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.08); /* Faint so it doesn't clash with foreground */
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+/* Alternate rows shift slightly to create an offset brick pattern */
+.muralRow:nth-child(even) {
+  transform: translateX(-15vw);
+}
+.muralRow:nth-child(odd) {
+  transform: translateX(15vw);
+}
+
+.baseLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #050505;
+  z-index: 0;
+}
+
+.filmGrain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+}
+
+.webglWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: #000000;
+}
