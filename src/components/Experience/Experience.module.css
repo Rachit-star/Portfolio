@@ -85,10 +85,11 @@
   .experienceRow {
     flex-direction: column;
     gap: 1rem;
+    padding: 2rem 0;
   }
   .expDate {
     flex: none;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 }
 

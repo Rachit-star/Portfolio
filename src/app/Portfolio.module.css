@@ -29,6 +29,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 8vh 0;
+  }
+}
+
 .section:last-child {
   border-bottom: none;
 }
@@ -73,7 +79,7 @@
 
 .sectionTitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(2rem, 10vw, 8rem);
   font-weight: 800;
   margin-bottom: 4rem;
   color: #ffffff;
@@ -377,6 +383,14 @@
   padding-right: 1rem;
 }
 
+@media (max-width: 768px) {
+  .brutalistRow {
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 1rem;
+  }
+}
+
 .rowLabel {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1rem;
@@ -389,6 +403,12 @@
 .rowContent {
   width: 75%;
   flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .rowLabel, .rowContent {
+    width: 100%;
+  }
 }
 
 .skillPill {

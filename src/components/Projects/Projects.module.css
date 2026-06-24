@@ -42,6 +42,12 @@
   transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+@media (max-width: 768px) {
+  .projectHoverRow {
+    padding: 1.5rem 0;
+  }
+}
+
 .projectHoverRow:hover {
   background: #fff;
   padding: 4rem 2rem;
@@ -49,7 +55,7 @@
 
 .projectTitle {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(1.8rem, 8vw, 6rem);
   font-weight: 800;
   text-transform: uppercase;
   color: #fff;
