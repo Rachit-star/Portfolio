@@ -27,9 +27,10 @@ export default function Hero() {
           <div className={styles.roleWrapper}>
             <div className={styles.roleTitle}>Software Engineer & ML Architect</div>
             <div className={styles.roleDescription}>
-              Bridging the gap between intelligent AI systems<br />
-              and high-performance web experiences.<br />
-              <span className={styles.highlight}>Make it raw. Make it work.</span>
+              Bridging the gap between intelligent AI systems and high-performance web experiences.
+              <div className={styles.highlightBlock}>
+                <span className={styles.highlight}>Make it raw. Make it work.</span>
+              </div>
             </div>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
               [ VIEW RESUME ]

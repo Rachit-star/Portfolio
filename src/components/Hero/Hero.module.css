@@ -38,8 +38,23 @@
 }
 
 @media (max-width: 768px) {
+  .heroSection {
+    height: auto;
+    padding-top: 5vh;
+  }
+  .heroContent {
+    height: auto;
+  }
   .typographyContainer {
-    padding: 8vh 4vw 2vh 4vw;
+    padding: 2vh 5vw 5vh 5vw;
+    flex: none;
+  }
+  .name {
+    margin: 0 0 1.5rem 0;
+  }
+  .roleWrapper {
+    padding-left: 1rem;
+    border-left-width: 1px;
   }
 }
 
@@ -97,7 +112,11 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.1rem;
   color: #888;
-  line-height: 1.8;
+  line-height: 1.6;
+}
+
+.highlightBlock {
+  margin-top: 1rem;
 }
 
 .highlight {
@@ -130,7 +149,8 @@
 @media (max-width: 1024px) {
   .visualContainer {
     height: auto;
-    padding: 10vh 2vw;
+    padding: 5vh 5vw 10vh 5vw;
+    flex: none;
   }
 }
 

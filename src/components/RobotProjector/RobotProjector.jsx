@@ -115,6 +115,8 @@ function CanvasEyes({ isProjecting, onEmotionChange, isNavExpanded, overrideEmot
 
     cvs.width = width * dpr;
     cvs.height = height * dpr;
+    cvs.style.width = `${width}px`;
+    cvs.style.height = `${height}px`;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     let running = true;
