@@ -44,7 +44,19 @@
 
 @media (max-width: 768px) {
   .projectHoverRow {
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .projectTitle {
+    font-size: 16vw;
+    word-break: break-all;
+    line-height: 0.9;
+  }
+  .projectMeta {
+    align-items: flex-start;
   }
 }
 

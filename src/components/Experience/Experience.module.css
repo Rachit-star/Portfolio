@@ -93,6 +93,15 @@
   }
 }
 
+@media (max-width: 768px) {
+  .experienceRow {
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1rem;
+    background: transparent;
+  }
+}
+
 .projectorBtn {
   margin-top: 2rem;
   background: transparent;

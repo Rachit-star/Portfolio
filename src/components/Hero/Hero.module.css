@@ -44,17 +44,24 @@
   }
   .heroContent {
     height: auto;
+    flex-direction: column-reverse;
   }
   .typographyContainer {
     padding: 2vh 5vw 5vh 5vw;
     flex: none;
   }
   .name {
-    margin: 0 0 1.5rem 0;
+    font-size: 18vw;
+    margin: 0 0 1rem 0;
+    line-height: 0.85;
+    word-break: break-word;
   }
   .roleWrapper {
-    padding-left: 1rem;
-    border-left-width: 1px;
+    padding: 1.5rem 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   }
 }
 

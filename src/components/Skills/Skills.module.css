@@ -107,3 +107,12 @@
     padding-top: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .arsenalRow {
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1rem;
+    background: transparent;
+  }
+}
