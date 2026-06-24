@@ -10,7 +10,7 @@ function drawEye(ctx, x, y, baseW, baseH, {
   openness = 1,
   happy = 0,
   curioTall = 1,
-  amazed = 0, // NEW
+  amazed = 0,
   scale = 1,
   opacity = 1,
   mergeProg = 0,
@@ -27,7 +27,7 @@ function drawEye(ctx, x, y, baseW, baseH, {
   const hw = ew / 2;
   const hh = eh / 2;
 
-  // Smooth crossfade for amazed ^^ expression
+  // Amazed state (^^)
   if (amazed > 0.01) {
     ctx.save();
     ctx.globalAlpha = opacity * amazed;
@@ -45,7 +45,7 @@ function drawEye(ctx, x, y, baseW, baseH, {
     ctx.restore();
   }
 
-  // Smooth crossfade for normal eye fill
+  // Default eye fill
   if (amazed < 0.99) {
     ctx.save();
     ctx.globalAlpha = opacity * (1 - amazed);
@@ -150,7 +150,7 @@ function CanvasEyes({ isProjecting, onEmotionChange, isNavExpanded, overrideEmot
       if (isProjecting || isNavExpanded) return;
       const rect = cvs.getBoundingClientRect();
       const rx = rect.left + rect.width / 2;
-      // Since robot is at bottom of 300px canvas, adjust ry center
+      // Adjust ry center for bottom-aligned canvas
       const ry = rect.top + rect.height - 40;
       const dx = e.clientX - rx;
       const dy = e.clientY - ry;
@@ -302,7 +302,7 @@ export default function RobotProjector({ isProjecting, options = {}, children, o
   const [overrideEmotion, setOverrideEmotion] = useState(null);
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
-  // Removed the aggressive scroll listener so the robot acts independently
+
 
   useEffect(() => {
     const handleEmotion = (e) => {
@@ -360,7 +360,7 @@ export default function RobotProjector({ isProjecting, options = {}, children, o
     };
   };
 
-  // Physical Body Language: The robot head will physically move and tilt depending on its mood
+  // Calculate physical tilt based on mood
   const emotionVariants = {
     NEUTRAL: { y: 0, rotate: 0, scale: 1 },
     CHEERFUL: { y: -5, rotate: -5, scale: 1.02 },

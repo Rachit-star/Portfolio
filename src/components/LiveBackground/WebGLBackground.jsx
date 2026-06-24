@@ -4,7 +4,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import styles from './LiveBackground.module.css';
 
-// Create a highly organic, chaotic smoke texture using Canvas API
+// Generate smoke texture canvas
 function createOrganicCloudTexture() {
   const canvas = document.createElement('canvas');
   canvas.width = 512;
@@ -38,7 +38,7 @@ function createOrganicCloudTexture() {
   return new THREE.CanvasTexture(canvas);
 }
 
-// Create a sharp tiny dot for dust motes
+// Generate dust particle texture
 function createDustTexture() {
   const canvas = document.createElement('canvas');
   canvas.width = 32;
@@ -70,7 +70,7 @@ function CloudLayer() {
         scale: Math.random() * 15 + 10,
         speed: (Math.random() - 0.5) * 0.001,
         opacity: Math.random() * 0.4 + 0.1,
-        // Pure Brutalist Monochromatic Fog (Whites, Greys, Blacks)
+        // Apply monochromatic color palette
         color: new THREE.Color().setHSL(0, 0, Math.random() * 0.3 + 0.1) 
       });
     }
@@ -152,7 +152,7 @@ function DustLayer() {
   );
 }
 
-// THE SECRET SAUCE: Scroll-Driven 3D Flythrough
+// Scroll-driven camera animation
 function ScrollFlythroughRig() {
   const { camera, mouse } = useThree();
   const target = new THREE.Vector3();
@@ -172,29 +172,26 @@ function ScrollFlythroughRig() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useFrame(() => {
-    const s = scrollRef.current;
+  useFrame((state) => {
+    const scrollOffset = scrollRef.current;
+    const target = new THREE.Vector3();
     
-    // Mouse Parallax (subtle)
-    const mouseX = mouse.x * 2;
-    const mouseY = mouse.y * 2;
-    
-    // Cinematic Curved Path
-    const curveX = Math.sin(s * Math.PI) * 15; 
-    const curveY = Math.sin(s * Math.PI * 2) * 3; 
-    
-    // Amplified Scroll Physics:
-    // Increased the total flight distance so even small scrolls move you further into the fog
-    // Starts at Z=25 (far out), flies all the way down to Z=-50 (deep inside)
-    const targetZ = 25 - (s * 75); 
-    
-    target.set(mouseX + curveX, mouseY + curveY, targetZ);
-    
-    // Faster interpolation (0.07 instead of 0.03) makes slow scrolls feel instantly responsive
-    camera.position.lerp(target, 0.07);
-    
-    // Camera looks slightly ahead into the dark
-    const lookAtTarget = new THREE.Vector3(mouseX * 0.5, mouseY * 0.5, targetZ - 20);
+    // Mouse Parallax
+    target.x = (state.mouse.x * window.innerWidth) * 0.02;
+    target.y = (state.mouse.y * window.innerHeight) * 0.02;
+
+    // Curved Path
+    const pathCurveX = Math.sin(scrollOffset * Math.PI) * 10;
+    const pathCurveY = Math.cos(scrollOffset * Math.PI * 2) * 5;
+
+    // Scroll Physics
+    const scrollZ = 25 - (scrollOffset * 75); 
+
+    camera.position.x += (target.x + pathCurveX - camera.position.x) * 0.07;
+    camera.position.y += (target.y + pathCurveY - camera.position.y) * 0.07;
+    camera.position.z += (scrollZ - camera.position.z) * 0.07;
+
+    const lookAtTarget = new THREE.Vector3(target.x + pathCurveX * 1.5, target.y + pathCurveY * 1.5, scrollZ - 15);
     camera.quaternion.slerp(
       new THREE.Quaternion().setFromRotationMatrix(
         new THREE.Matrix4().lookAt(camera.position, lookAtTarget, new THREE.Vector3(0, 1, 0))
