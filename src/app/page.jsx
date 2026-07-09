@@ -27,7 +27,6 @@ export default function Portfolio() {
   const calledRef = useRef(false);
 
   useEffect(() => {
-    // Empty effect since scroll-based emotions were removed
   }, [phase]);
 
   function handleComplete() {

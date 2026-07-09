@@ -94,6 +94,30 @@ export default function Projects({ handleOpenProjector }) {
               </div>
             </div>
           </FadeUp>
+
+          <FadeUp delay={0.3}>
+            <div className={styles.projectHoverRow} onClick={() => handleOpenProjector(
+              <ProjectPayload 
+                title="FormulaForge" 
+                status="Deployed Live" 
+                desc="Your personal formula vault for quant prep. Store, organize, and render your formulas flawlessly." 
+                details={[
+                  "Structured Storage: A living database for your theorems",
+                  "Live LaTeX: Flawless KaTeX rendering",
+                  "Auto-Quizzes: Test memory with generated quizzes",
+                  "Exam Arena: Train on Past Year Questions",
+                  "Built with modern web technologies"
+                ]} 
+                url="https://formula-vault-eight.vercel.app/"
+              />
+            )}>
+              <div className={styles.projectTitle}>FormulaForge</div>
+              <div className={styles.projectMeta}>
+                <span className={styles.projectType}>Next.js · KaTeX · Auth</span>
+                <span className={styles.projectAction}>[ VIEW ]</span>
+              </div>
+            </div>
+          </FadeUp>
         </div>
 
       </div>
