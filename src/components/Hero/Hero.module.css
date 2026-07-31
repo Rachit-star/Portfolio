@@ -85,13 +85,15 @@
 
 .name {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: clamp(2.5rem, 12vw, 10rem);
+  font-size: clamp(2.5rem, 7vw, 8rem);
   font-weight: 800;
   line-height: 0.9;
   margin: 0 0 3rem 0;
   color: #fff;
   letter-spacing: -0.05em;
   text-transform: uppercase;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .accentDot {

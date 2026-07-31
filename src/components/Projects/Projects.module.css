@@ -67,12 +67,13 @@
 
 .projectTitle {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: clamp(1.8rem, 8vw, 6rem);
+  font-size: clamp(1.8rem, 5vw, 5rem);
   font-weight: 800;
   text-transform: uppercase;
   color: #fff;
   transition: color 0.4s ease;
   letter-spacing: -0.02em;
+  word-break: break-word;
 }
 
 .projectHoverRow:hover .projectTitle {

@@ -6,6 +6,10 @@
   --accent: #dfff00; /* Neon yellow for striking contrast */
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: var(--black);

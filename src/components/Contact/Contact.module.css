@@ -29,14 +29,15 @@
 
 .massiveTitle {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(2.5rem, 5vw, 6rem);
   font-weight: 800;
   line-height: 1.05;
   color: #fff;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0;
+  word-break: break-word;
 }
 
 .accent {
@@ -150,12 +151,13 @@
 
 .contactLinks a {
   font-family: 'Inter', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 300;
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
   letter-spacing: -0.02em;
+  word-break: break-all;
 }
 
 .contactLinks a:hover {

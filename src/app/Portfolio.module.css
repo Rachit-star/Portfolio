@@ -13,6 +13,7 @@
   margin: 0 auto;
   padding: 0 5vw;
   width: 100%;
+  overflow: hidden;
 }
 
 .heroSection {
@@ -80,7 +81,7 @@
 
 .sectionTitle {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(2rem, 10vw, 8rem);
+  font-size: clamp(2rem, 6vw, 7rem);
   font-weight: 800;
   margin-bottom: 4rem;
   color: #ffffff;
@@ -90,6 +91,8 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 1.5rem;
   display: block;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .deckCard {
